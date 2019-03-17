@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Status | Knowledge-based Disease Prediction Evolutionary System</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='common.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand upper" href="/">Knowledge-based Disease Prediction Evolutionary System</a>
+            </div>
+            <!--<div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a>Home</a></li>
+                    <li><a href="#">View Data</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </nav>
+    <center>
+        <section id="login-panel">
+            <div class="jumbotron">
+                <p>{{ result }}</p>
+                <a href="/" class="btn btn-primary">GO BACK</a>
+            </div>
+        </section>
+    </center>
+</div>
+</body>
+
+</html>

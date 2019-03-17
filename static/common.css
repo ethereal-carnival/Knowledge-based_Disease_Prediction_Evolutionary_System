@@ -1,0 +1,12 @@
+body {
+    min-height: 100vh;
+    background-image: url("background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-color: rgba(255,255,255,0.65);
+}

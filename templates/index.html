@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Log-In | Knowledge-based Disease Prediction Evolutionary System</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='common.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        error_message = '{{ error_message }}'
+        if (error_message.length != 0) alert(error_message);
+    </script>
+</head>
+
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand upper" href="/">Knowledge-based Disease Prediction Evolutionary System</a>
+            </div>
+            <div>
+                <!--<ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/register">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                </ul>-->
+            </div>
+        </div>
+    </nav>
+    <center>
+        <section id="login-panel">
+            <div class="jumbotron">
+                <form action="/login" method="post">
+                    <input type="text" name="username" class="form-control form-group input-lg" placeholder="Username" required/>
+                    <input type="password" name="password" class="form-control form-group input-lg" placeholder="Password" required/>
+                    <input type="submit" name="submit" value="LOGIN" class="btn btn-primary"/>
+                </form>
+            </div>
+        </section>
+    </center>
+</div>
+</body>
+
+</html>

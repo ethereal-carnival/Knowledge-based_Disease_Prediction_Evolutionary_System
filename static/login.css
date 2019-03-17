@@ -1,0 +1,11 @@
+#login-panel {
+    position: relative;
+    margin-top: 30vh;
+    display: inline-block;
+}
+
+.jumbotron {
+    border-radius: 5px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}

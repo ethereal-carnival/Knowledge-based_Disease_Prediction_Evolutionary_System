@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Details | Knowledge-based Disease Prediction Evolutionary System</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='common.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='details.css') }}"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        error_message = '{{ error_message }}'
+        if (error_message.length != 0) alert(error_message);
+    </script>
+</head>
+
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand upper" href="/">Open Connect Utility to IoT Devices</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="form-panel" class="container">
+        <div class="jumbotron">
+            <form action="/store" method="post">
+                <!--<h2>MongoDB Details</h2>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <input type="text" name="db_ip_address" class="form-control form-group input-md"
+                               placeholder="IP Address"/>
+                        <input type="text" name="db_username" class="form-control input-md" placeholder="Username"/>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <input type="text" name="db_name" class="form-control form-group input-md"
+                               placeholder="Database Name"/>
+                        <input type="text" name="db_password" class="form-control input-md" placeholder="Password"/>
+                    </div>
+                </div>
+                <br/>-->
+                <h2>SSH Details</h2>
+                <p>Please fill these only if the user that you previously registered with has been deleted on your RaspberryPi device</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <input type="text" name="ip" class="form-control form-group input-md"
+                                   placeholder="IP Address"/>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <input type="text" name="ssh_username" class="form-control input-md"
+                                   placeholder="Username"/>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <input type="text" name="ssh_password" class="form-control input-md"
+                                   placeholder="Password"/>
+                        </div>
+                    </div>
+
+                Click <a href="/capture" target="_blank">here</a> to download the necessary file
+
+                <h2>File Path Details</h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input type="text" id="csv_path" name="path" class="form-control form-group input-md"
+                               placeholder="Absolute path to the downloaded py file (excluding filename)."/>
+                    </div>
+                </div>
+                <br/>
+                <input type="submit" name="submit" value="EXECUTE" class="btn btn-primary"/>
+            </form>
+        </div>
+    </section>
+</div>
+</body>
+
+</html>
