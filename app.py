@@ -41,46 +41,39 @@ def login():
             return redirect('/error')
 
 
-
-'''
-@app.route('/add')
-def add():
-    user = mongo.db.users
-    user.insert({'name': 'Vyom'})
-    return 'Added User!'
-'''
-
-
-@app.route('/capture', methods=["GET", "POST"])
-def capture():
-    return send_file(app.root_path + "/capture.py")
-
-
 @app.route('/registered', methods=["POST"])
 def registered():
     users = mongo.db.users
     username = session['temp_username']
     password = session['temp_password']
-    ip_address = request.form['ip']
-    ssh_username = request.form['ssh_username']
-    ssh_password = request.form['ssh_password']
-    try:
-        s = 'sshpass -p "'+ssh_password+'" ssh-copy-id -o StrictHostKeyChecking=no '+ssh_username+'@'+ip_address
-        os.system(s)
-    except:
-        return render_template('register.html', username=username, password=password, error_message='Please check the ssh details')
-    else:
-        users.insert({'username': username, 'password': password, 'ip': ip_address, 'ssh_username': ssh_username,
-                  'ssh_password': ssh_password})
-        session.pop('temp_username', None)
-        session.pop('temp_password', None)
-        session['username'] = username
-        return redirect('/details')
+    first_name = request.form['fname']
+    last_name = request.form['lname']
+    age = request.form['age']
+    gender = request.form['gender']
+    users.insert({'username': username, 'password': password, 'fname': first_name, 'lname': last_name,
+              'age': age, 'gender': gender})
+    session.pop('temp_username', None)
+    session.pop('temp_password', None)
+    session['username'] = username
+    return redirect('/details')
 
 
 @app.route('/details')
-def verify():
-    return render_template('details.html')
+def details():
+    session_username = session['username']
+    user = mongo.db.users
+    username = user.find_one({'username': session_username})
+    first_name = username['fname']
+    last_name = username['lname']
+    name = first_name + " " + last_name
+    gender = username['gender']
+    age = username['age']
+    return render_template('details.html', username=session_username, name=name, gender=gender, age=age)
+
+
+@app.route('/predict')
+def predict():
+    return render_template('status.html', result='The symptoms point to a 90% chance of Common Cold.')
 
 
 @app.route('/error')
@@ -94,54 +87,12 @@ def logout():
     return redirect('/')
 
 
-'''
-@app.route('/update')
-def update():
-    user = mongo.db.users
-    crimson = user.find_one({'name' : 'crimson_carnival'})
-    crimson['password'] = 'Hello World'
-    user.save(crimson)
-    return 'Updated crimson_carnival'
-'''
-
-
 @app.route('/delete_<username>')
-def delete_all(username):
+def delete_user(username):
     user = mongo.db.users
-    vyom = user.find_one({'username': username})
-    user.remove(vyom)
+    username = user.find_one({'username': username})
+    user.remove(username)
     return 'Removed'
-
-
-@app.route('/remove__<name>')
-def delete_employee(name):
-    user = mongo.db.employees
-    vyom = user.find_one({'name': name})
-    user.remove(vyom)
-    return 'Removed'
-
-
-@app.route('/store', methods=["POST"])
-def test():
-    ip_address = request.form['ip']
-    ssh_username = request.form['ssh_username']
-    ssh_password = request.form['ssh_password']
-    if ssh_password != '':
-        try:
-            s = 'sshpass -p "'+ssh_password+'" ssh-copy-id -o StrictHostKeyChecking=no '+ssh_username+'@'+ip_address
-            os.system(s)
-        except:
-            return render_template("details.html", error_message='Please check the ssh details')
-        else:
-            user = mongo.db.users
-            single_user = user.find_one({'username': session['username']})
-            single_user['ssh_password'] = ssh_password
-            single_user['ssh_username'] = ssh_username
-            single_user['ip'] = ip_address
-            user.save(single_user)
-    path = request.form['path']
-    result = action.do(path, session['username'])
-    return render_template("status.html", result=result)
 
 
 if __name__ == '__main__':

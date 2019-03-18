@@ -31,10 +31,10 @@
 
 <body>
 <div class="wrapper">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand upper" href="/">Open Connect Utility to IoT Devices</a>
+                <a class="navbar-brand upper" href="/">Knowledge-based Disease Prediction Evolutionary System</a>
             </div>
             <div>
                 <ul class="nav navbar-nav navbar-right">
@@ -45,7 +45,7 @@
     </nav>
     <section id="form-panel" class="container">
         <div class="jumbotron">
-            <form action="/store" method="post">
+            <form action="/predict" method="post">
                 <!--<h2>MongoDB Details</h2>
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
@@ -60,34 +60,35 @@
                     </div>
                 </div>
                 <br/>-->
-                <h2>SSH Details</h2>
-                <p>Please fill these only if the user that you previously registered with has been deleted on your RaspberryPi device</p>
+                <h2>Personal Information</h2>
                     <div class="row">
-                        <div class="col-xs-12 col-md-4">
-                            <input type="text" name="ip" class="form-control form-group input-md"
-                                   placeholder="IP Address"/>
+                        <div class="col-xs-12 col-md-6">
+                            Name: {{ name }}
                         </div>
-                        <div class="col-xs-12 col-md-4">
-                            <input type="text" name="ssh_username" class="form-control input-md"
-                                   placeholder="Username"/>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <input type="text" name="ssh_password" class="form-control input-md"
-                                   placeholder="Password"/>
+                        <div class="col-xs-12 col-md-6">
+                            Username: {{ username }}
                         </div>
                     </div>
-
-                Click <a href="/capture" target="_blank">here</a> to download the necessary file
-
-                <h2>File Path Details</h2>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            Age: {{ age }}
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            Gender: {{ gender }}
+                        </div>
+                    </div>
+                <br />
+                <br />
+                <h2>Disease Prediction System</h2>
+                <p>Please enter your symptoms here to get a prediction:</p>
                 <div class="row">
                     <div class="col-xs-12">
                         <input type="text" id="csv_path" name="path" class="form-control form-group input-md"
-                               placeholder="Absolute path to the downloaded py file (excluding filename)."/>
+                               placeholder="Symptoms separated by commas(,)."/>
                     </div>
                 </div>
                 <br/>
-                <input type="submit" name="submit" value="EXECUTE" class="btn btn-primary"/>
+                <input type="submit" name="submit" value="Predict" class="btn btn-primary"/>
             </form>
         </div>
     </section>

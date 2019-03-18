@@ -26,7 +26,7 @@
 
 <body>
 <div class="wrapper">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand upper" href="/">Knowledge-based Disease Prediction Evolutionary System</a>
@@ -43,6 +43,7 @@
         <section id="login-panel">
             <div class="jumbotron">
                 <form action="/registered" method="post">
+                    <h2>Login Credentials</h2>
                     <input type="text" value="{{ username }}" class="form-control form-group input-lg"
                            placeholder="Username" disabled/>
                     <input type="password" value="{{ password }}"
@@ -54,19 +55,28 @@
                         <input type="password" name="password" value="{{ password }}"
                                class="form-control form-group input-lg" placeholder="Password" disabled/>
                     </div>
-                    <h2>SSH Details</h2>
+                    <h2>Personal Details</h2>
                     <div class="row">
-                        <div class="col-xs-12 col-md-4">
-                            <input type="text" name="ip" class="form-control form-group input-md"
-                                   placeholder="IP Address" required/>
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" name="fname" class="form-control form-group input-md"
+                                   placeholder="First and Middle Names" required title="First and Middle Names"/>
                         </div>
-                        <div class="col-xs-12 col-md-4">
-                            <input type="text" name="ssh_username" class="form-control input-md"
-                                   placeholder="Username" required/>
+                        <div class="col-xs-12 col-md-6">
+                            <input type="test" name="lname" class="form-control form-group input-md"
+                                   placeholder="Last name" required title="Last Name"/>
                         </div>
-                        <div class="col-xs-12 col-md-4">
-                            <input type="text" name="ssh_password" class="form-control input-md"
-                                   placeholder="Password" required/>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <input type="number" name="age" class="form-control form-group input-md"
+                                   placeholder="Age" required title="Age"/>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <select class="form-control form-group input-md" id="gender" name="gender" required title="Gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                     </div>
                     <br/>
