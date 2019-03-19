@@ -82,13 +82,50 @@
                 <h2>Disease Prediction System</h2>
                 <p>Please enter your symptoms here to get a prediction:</p>
                 <div class="row">
-                    <div class="col-xs-12">
-                        <input type="text" id="csv_path" name="path" class="form-control form-group input-md"
-                               placeholder="Symptoms separated by commas(,)."/>
+                    <div class="col-xs-12 col-md-6">
+                            <select name="symptom_1" class="form-control form-group input-md">
+                                <option value = 'None'>Select your symptoms</option>
+                                {%for i in range(0, len)%}
+                                    <option>{{symptoms[i]}}</option>
+                                {%endfor%}
+                            </select>
+                            <select name="symptom_2" class="form-control form-group input-md">
+                                <option value = 'None'>Select your symptoms</option>
+                                {%for i in range(0, len)%}
+                                    <option>{{symptoms[i]}}</option>
+                                {%endfor%}
+                            </select>
+                            <select name="symptom_3" class="form-control form-group input-md">
+                                <option value = 'None'>Select your symptoms</option>
+                                {%for i in range(0, len)%}
+                                    <option>{{symptoms[i]}}</option>
+                                {%endfor%}
+                                </select>
+                            <select name="symptom_4" class="form-control form-group input-md">
+                                <option value = 'None'>Select your symptoms</option>
+                                {%for i in range(0, len)%}
+                                    <option>{{symptoms[i]}}</option>
+                                {%endfor%}
+                                </select>
+                            <select name="symptom_5" class="form-control form-group input-md">
+                                <option value = "None">Select your symptoms</option>
+                                {%for i in range(0, len)%}
+                                    <option>{{symptoms[i]}}</option>
+                                {%endfor%}
+                                </select>
+                    </div>
+                    <br/>
+                    <div class="col-xs-12 col-md-offset-2 col-md-2 col-md-offset-2">
+                        <br />
+                        <input type="submit" name="submit" value="Decision Tree" class="form-control btn btn-primary"/>
+                        <br />
+                        <br />
+                        <input type="submit" name="submit" value="Random Forest" class="form-control btn btn-primary"/>
+                        <br />
+                        <br />
+                        <input type="submit" name="submit" value="Naive Bayes" class="form-control btn btn-primary"/>
                     </div>
                 </div>
-                <br/>
-                <input type="submit" name="submit" value="Predict" class="btn btn-primary"/>
             </form>
         </div>
     </section>
