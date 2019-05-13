@@ -95,10 +95,10 @@ def decision_tree(symptoms):
     clf3 = clf3.fit(X, y)
 
     # calculating accuracy-------------------------------------------------------------------
-    from sklearn.metrics import accuracy_score
-    y_pred = clf3.predict(X_test)
-    print(accuracy_score(y_test, y_pred))
-    print(accuracy_score(y_test, y_pred, normalize=False))
+    # from sklearn.metrics import accuracy_score
+    # y_pred = clf3.predict(X_test)
+    # print(accuracy_score(y_test, y_pred))
+    # print(accuracy_score(y_test, y_pred, normalize=False))
     # -----------------------------------------------------
 
     p_symptoms = [symptoms[0], symptoms[1], symptoms[2], symptoms[3], symptoms[4]]
@@ -140,10 +140,10 @@ def random_forest(symptoms):
     clf4 = clf4.fit(X, np.ravel(y))
 
     # calculating accuracy-------------------------------------------------------------------
-    from sklearn.metrics import accuracy_score
-    y_pred = clf4.predict(X_test)
-    print(accuracy_score(y_test, y_pred))
-    print(accuracy_score(y_test, y_pred, normalize=False))
+    # from sklearn.metrics import accuracy_score
+    # y_pred = clf4.predict(X_test)
+    # print(accuracy_score(y_test, y_pred))
+    # print(accuracy_score(y_test, y_pred, normalize=False))
     # -----------------------------------------------------
 
     p_symptoms = [symptoms[0], symptoms[1], symptoms[2], symptoms[3], symptoms[4]]
@@ -184,11 +184,11 @@ def naive_bayes(symptoms):
     gnb = gnb.fit(X, np.ravel(y))
 
     # calculating accuracy-------------------------------------------------------------------
-    from sklearn.metrics import accuracy_score
-    y_pred=gnb.predict(X_test)
-    print(accuracy_score(y_test, y_pred))
-    print(accuracy_score(y_test, y_pred, normalize=False))
-    # -----------------------------------------------------
+    # from sklearn.metrics import accuracy_score
+    # y_pred=gnb.predict(X_test)
+    # print(accuracy_score(y_test, y_pred))
+    # print(accuracy_score(y_test, y_pred, normalize=False))
+    # # -----------------------------------------------------
 
     p_symptoms = [symptoms[0], symptoms[1], symptoms[2], symptoms[3], symptoms[4]]
     for k in range(0,len(l1)):
